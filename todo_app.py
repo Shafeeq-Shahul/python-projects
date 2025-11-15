@@ -1,4 +1,5 @@
 from time import sleep
+from colorama import init, Fore
 
 # to manage todos we are using the dict data type like title - desc pair
 todos = {}
@@ -64,7 +65,8 @@ def display_CLI() -> None :
         print("+----------------------------------+")
 
 def show_banner():
-    print("""
+    init(autoreset = True)
+    print(Fore.RED + """
   _____    ___          _              
  |_   _|__|   \\ ___    /_\\  _ __ _ __ 
    | |/ _ \\ |) / _ \\  / _ \\| '_ \\ '_ \\
@@ -124,3 +126,4 @@ if __name__ == "__main__" :
     
     # start the CLI application
     start_app()
+
