@@ -62,10 +62,27 @@ def display_CLI() -> None :
         print("| 6. Save TODOs                   |")
         print("| 7. Exit                         |")
         print("+----------------------------------+")
+
+def show_banner():
+    print("""
+  _____    ___          _              
+ |_   _|__|   \\ ___    /_\\  _ __ _ __ 
+   | |/ _ \\ |) / _ \\  / _ \\| '_ \\ '_ \\
+   |_|\\___/___/\\___/ /_/ \\_\\ .__/ .__/ 
+                           |_|  |_|    
+    """)
+
         
 def options_logic() -> None :
     
     # get the options from the user
+    show_banner()
+    start = str(input("Start Application(y/n) : "))
+    
+    if start.lower() != "y" : 
+        print("Terminated...")
+        return
+    
     try :
         while True :
             display_CLI()
