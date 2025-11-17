@@ -33,6 +33,9 @@ def start_app() -> None :
         return
     display_banner()
     folder_path = str(input("Enter the folder directory to organize : "))
+    if not os.path.isdir(folder_path) :
+        print("Folder doesn't exists.")
+        return
     organize_files(folder_path)
     print("Organizing", end="")
     for _ in range(3) :
@@ -43,4 +46,5 @@ def start_app() -> None :
 
 if __name__ == "__main__" :
     # start the application
+
     start_app()
