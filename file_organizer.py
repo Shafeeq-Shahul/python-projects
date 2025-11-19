@@ -27,11 +27,11 @@ def organize_files(folder_path : str) -> None :
             shutil.move(folder_path + "/" + file, folder_path + "/" + extension + "/" + file)
 
 def start_app() -> None :
+    display_banner()
     start = str(input("Start Application(y/n) : "))
     if start != "y" :
         print("Terminated...")
         return
-    display_banner()
     folder_path = str(input("Enter the folder directory to organize : "))
     if not os.path.isdir(folder_path) :
         print("Folder doesn't exists.")
@@ -48,3 +48,4 @@ if __name__ == "__main__" :
     # start the application
 
     start_app()
+
